@@ -1,4 +1,4 @@
-const url = "http://localhost:9001"
+const url = "https://177c-138-36-39-182.ngrok-free.app"
 async function nomeandoButton(){
     const buttonLuz = document.getElementById('buttonLuz');
     const response = await fetch(url+'/home/VerificandoEquipamentos/', {
