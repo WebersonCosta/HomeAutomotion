@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>🏠</title>
+  <script src="script.js"></script>
+
+</head>
+<body>
+  <header class="bg-dark text-white text-center py-3">
+    <h1>Home</h1>
+  </header>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Luz</div>
+          <div class="card-body text-center">
+            <button type="button" class="btn btn-primary" id="buttonLuz" onclick="atualizarStatusLampada(event)">Ligar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Sensores</div>
+          <div class="card-body text-center">
+            <button type="button" class="btn btn-primary" id="buttonPIR" onclick="onOffSensor(event)">Ligar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Caixa d'agua</div>
+      <div class="card-body">
+        <h2>Dados</h2>
+       
+        <p id="boia">● Altura da Agua:<p id="alturaAgua"></p></p>
+        <button class="btn btn-primary" onclick="capturarDados(event)">Carregar Dados</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
