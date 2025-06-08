@@ -1,4 +1,4 @@
-const url = "https://177c-138-36-39-182.ngrok-free.app"; // Sua URL ngrok, atualizada!
+const url = "https://7191-138-36-39-182.ngrok-free.app"; 
 
 async function nomeandoButton() {
     const buttonLuz = document.getElementById('buttonLuz');
@@ -10,9 +10,9 @@ async function nomeandoButton() {
     });
     if (response.ok) {
         const data = await response.json();
-        // Garante que a comparação seja com a string "true" ou "false"
+        
         const api_status = data[0]["StatusLampada"]; 
-        if (api_status === "true") { // Use === para comparação de tipo e valor
+        if (api_status === "true") { 
             buttonLuz.innerHTML = "DESLIGAR";
         } else {
             buttonLuz.innerHTML = "LIGAR";
@@ -66,7 +66,7 @@ async function atualizarStatusLampada() {
                 });
                 if (updateResponsefalse.ok) {
                     console.log('Lâmpada ligada com sucesso.');
-                    botao.innerHTML = "DESLIGAR"; // Mudei para DESLIGAR após ligar
+                    botao.innerHTML = "DESLIGAR"; 
                 } else {
                     console.error('Falha ao ligar lâmpada:', updateResponsefalse.statusText);
                 }
@@ -108,7 +108,7 @@ async function onOffSensor() {
                 });
                 if (updateResponsetrue.ok) {
                     console.log('SENSOR desligado com sucesso.');
-                    botao.innerHTML = "LIGAR"; // Mudei para LIGAR após desligar
+                    botao.innerHTML = "LIGAR"; 
                 } else {
                     console.error('Falha ao desligar sensor:', updateResponsetrue.statusText);
                 }
@@ -126,7 +126,7 @@ async function onOffSensor() {
                 });
                 if (updateResponsefalse.ok) {
                     console.log('SENSOR ligado com sucesso.');
-                    botao.innerHTML = "DESLIGAR"; // Mudei para DESLIGAR após ligar
+                    botao.innerHTML = "DESLIGAR";
                 } else {
                     console.error('Falha ao ligar sensor:', updateResponsefalse.statusText);
                 }
@@ -157,7 +157,7 @@ async function capturarDados() {
         console.log("estou true");
         const requesBodyFalse = JSON.stringify({ "CapturarMedidaCaixa": "false" });
         await delay(3000);
-        // CORRIGIDO: Usando a variável `url` do ngrok aqui também!
+        
         const updateResponsefalse = await fetch(url + `/home/AtualizarEquipamentos/${1}`, { 
             method: 'PATCH',
             headers: {
